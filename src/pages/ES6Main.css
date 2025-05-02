@@ -1,0 +1,59 @@
+.es6-main {
+  margin-left: 260px;
+  padding: 32px;
+  color: #fff;
+  background: #1a2025;
+  min-height: 100vh;
+}
+
+.simple-def {
+  font-size: 1.2rem;
+  margin-bottom: 32px;
+  color: #e0e0e0;
+}
+
+.collapsible-list {
+  margin-top: 24px;
+  max-width: 600px;
+}
+
+.collapsible-section {
+  background: #232b32;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+}
+
+.collapsible-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #4caf50;
+}
+
+.collapsible-content {
+  padding: 16px 24px 20px 24px;
+  color: #e0e0e0;
+  font-size: 1rem;
+  border-top: 1px solid #34404a;
+}
+
+.learn-more-btn {
+  margin-top: 12px;
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.learn-more-btn:hover {
+  background: #388e3c;
+} 
