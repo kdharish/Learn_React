@@ -59,49 +59,49 @@ function Child({ message, animate }) {
   );
 }
 
-function Parent() {
-  const [input, setInput] = useState('Hello from Parent!');
-  const [animate, setAnimate] = useState(false);
-  const arrowRef = useRef();
-  const bubbleRef = useRef();
+// function Parent() {
+//   const [input, setInput] = useState('Hello from Parent!');
+//   const [animate, setAnimate] = useState(false);
+//   const arrowRef = useRef();
+//   const bubbleRef = useRef();
 
-  useEffect(() => {
-    if (arrowRef.current && bubbleRef.current) {
-      arrowRef.current.classList.add('arrow-animate');
-      bubbleRef.current.classList.add('bubble-animate');
-      setAnimate(true);
-      const timeout = setTimeout(() => {
-        arrowRef.current.classList.remove('arrow-animate');
-        bubbleRef.current.classList.remove('bubble-animate');
-        setAnimate(false);
-      }, 600);
-      return () => clearTimeout(timeout);
-    }
-  }, [input]);
+//   useEffect(() => {
+//     if (arrowRef.current && bubbleRef.current) {
+//       arrowRef.current.classList.add('arrow-animate');
+//       bubbleRef.current.classList.add('bubble-animate');
+//       setAnimate(true);
+//       const timeout = setTimeout(() => {
+//         arrowRef.current.classList.remove('arrow-animate');
+//         bubbleRef.current.classList.remove('bubble-animate');
+//         setAnimate(false);
+//       }, 600);
+//       return () => clearTimeout(timeout);
+//     }
+//   }, [input]);
 
-  return (
-    <div className="parent-child-visual">
-      <div className="parent-box">
-        <h4>Parent Component</h4>
-        <div className="step-label">1. User types a message in Parent</div>
-        <label>
-          Type a message to send as prop:
-          <input
-            value={input}
-            onChange={e => setInput(e.target.value)}
-            className="prop-input"
-          />
-        </label>
-        <div className="step-label">2. Message is sent as prop to Child ↓</div>
-      </div>
-      <div className="arrow-area">
-        <div className="message-bubble" ref={bubbleRef}>{input}</div>
-        <div className="arrow" ref={arrowRef}>↓</div>
-      </div>
-      <Child message={input} animate={animate} />
-    </div>
-  );
-}
+//   return (
+//     <div className="parent-child-visual">
+//       <div className="parent-box">
+//         <h4>Parent Component</h4>
+//         <div className="step-label">1. User types a message in Parent</div>
+//         <label>
+//           Type a message to send as prop:
+//           <input
+//             value={input}
+//             onChange={e => setInput(e.target.value)}
+//             className="prop-input"
+//           />
+//         </label>
+//         <div className="step-label">2. Message is sent as prop to Child ↓</div>
+//       </div>
+//       <div className="arrow-area">
+//         <div className="message-bubble" ref={bubbleRef}>{input}</div>
+//         <div className="arrow" ref={arrowRef}>↓</div>
+//       </div>
+//       <Child message={input} animate={animate} />
+//     </div>
+//   );
+// }
 
 const CodeBlock = ({ code, highlightLines = [] }) => {
   // Simple code block with optional line highlighting
@@ -125,7 +125,7 @@ const PropsVisualization = () => {
   // Sync with Parent input
   const handleInputChange = (val) => setLiveMessage(val);
 
-  const parentCode = `function Parent() {\n  const [input, setInput] = useState(\"${liveMessage}\");\n\n  return (\n    <Child message={input} /> // Passing 'input' as prop\n  );\n}`;
+  const parentCode = `function Parent() {\n  const [input, setInput] = useState("${liveMessage}");\n\n  return (\n    <Child message={input} /> // Passing 'input' as prop\n  );\n}`;
 
   const childCode = `function Child({ message }) { // Destructuring props\n  return (\n    <div>\n      Received prop: {message}\n    </div>\n  );\n}`;
 

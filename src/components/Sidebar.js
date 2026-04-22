@@ -4,9 +4,9 @@ import './Sidebar.css';
 
 const topics = [
   { label: 'React Home', path: '/' },
-  { label: 'React Intro', path: '/intro' },
-  { label: 'React Get Started', path: '/get-started' },
-  { label: 'React Upgrade', path: '/upgrade' },
+  // { label: 'React Intro', path: '/intro' },
+  // { label: 'React Get Started', path: '/get-started' },
+  // { label: 'React Upgrade', path: '/upgrade' },
   { label: 'React ES6', path: '/es6' },
   { label: 'React Render HTML', path: '/render-html' },
   { label: 'React JSX', path: '/jsx' },
